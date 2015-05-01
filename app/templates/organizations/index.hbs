@@ -30,7 +30,7 @@
 				<form class="form-horizontal">
 					
 					<fieldset>
-						{{address-select addressModel=filterAddress hideLabels=true defaultProvince="KZ"}}
+						{{address-select addressModel=model.filterAddress hideLabels=true defaultProvince="KZ"}}
 						<div class="checkbox">
 							<label>
 								{{input type="checkbox" name="urban" checked=filterUrban class="ace input-lg"}}
@@ -43,7 +43,7 @@
 						</div>
 						<div class="space-8"></div>
 						<div>
-							{{view "select" class="form-control" content=orgTypes selection=filterOrgTypes multiple="true" optionTitlePath="content.desc" optionLabelPath="content.display" optionValuePath="content.id"}}
+							{{view "select" class="form-control" content=model.orgTypes selection=filterOrgTypes multiple="true" optionTitlePath="content.desc" optionLabelPath="content.display" optionValuePath="content.id"}}
 						</div>
 					</fieldset>
 
@@ -63,13 +63,13 @@
 	</div>
 	{{#tab-container classNames="col-xs-9"}}
 		{{#tab-pane title="Map"}}
-			{{render "organizations.map" model}}
+			{{render "organizations.map" model.organizations}}
 		{{/tab-pane}}
 		{{#tab-pane title="List"}}
-			{{render "organizations.list" model}}
+			{{render "organizations.list" model.organizations}}
 		{{/tab-pane}}
 		{{#tab-pane title="Statistics"}}
-			{{render "organizations.stats" model}}
+			{{render "organizations.stats" model.organizations}}
 		{{/tab-pane}}
 	{{/tab-container}}
 </div>
