@@ -1,5 +1,5 @@
 <ul class="breadcrumb">
-  {{#each crumb in breadCrumbs}}
+  {{#each crumb in model.breadCrumbs}}
     <li {{bind-attr class="crumb.isCurrent:current:"}}>
       {{#if crumb.linkable}}
         {{#if crumb.model}}{{! to avoid null/undefined model in link-to }}
