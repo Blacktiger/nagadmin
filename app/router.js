@@ -40,6 +40,10 @@ Router.map(function() {
                 this.route('index');
                 this.route('edit', { path: ':id' });
             });
+            this.resource('forms', function() {
+              this.route('index');
+              this.route('edit', { path: ':id' });
+            });
         });
 
         if (!config.isProd) {
