@@ -40,6 +40,10 @@
 										<button class="btn btn-xs btn-danger" {{action 'showModal' 'admin.confirmDeleteFormModal' form}}>
 											<i class="ace-icon fa fa-trash-o bigger-120"></i>
 										</button>
+										
+										{{#link-to 'forms.preview' form.id class="btn btn-xs btn-success"}}
+											<i class="ace-icon fa fa-file-text bigger-120"></i>
+										{{/link-to}}
 									</div>
 								</td>
 							{{/if}}

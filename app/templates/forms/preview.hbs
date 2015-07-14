@@ -1,0 +1,8 @@
+<form>
+{{#each fieldGroup in fieldGroups}}
+	<legend>{{fieldGroup.legend}}</legend>
+	{{#each field in fieldGroup.fields}}
+		<label>{{field.label}} {{input type=field.type placeholder=field.placeholder}}</label> <i class="text-info fa fa-info-circle" title="{{field.info}}"></i>
+	{{/each}}
+{{/each}}
+</form>
