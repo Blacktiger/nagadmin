@@ -1,0 +1,147 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<input type="text" placeholder="Field Group Title" />
+
+		<div class="pull-right">
+			<button type="button" class="btn btn-sm btn-danger" {{action 'removeGroup' group}}>Remove Question Group</button>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		{{forms/edit-question type="checkbox"}}
+
+		<div class="question-group">
+			<button type="button" class="btn btn-sm btn-danger pull-right">Remove Question</button>
+
+			<div class="form-group">
+				<label>Type</label>
+
+				<select>
+					<option>Text</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<input class="form-control" type="text" placeholder="Question" />
+			</div>
+
+			<div class="form-group">
+				<input class="form-control" type="text" placeholder="Value Placeholder" />
+			</div>
+		</div>
+
+		<div class="question-group">
+			<button type="button" class="btn btn-sm btn-danger pull-right">Remove Question</button>
+
+			<div class="form-group">
+				<label>Type</label>
+				<select>
+					<option>Single Choice</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<input type="text" placeholder="Question" />
+			</div>
+
+			<div class="form-group">
+				<label>Options</label>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input type="radio" disabled />
+					</span>
+					<input type="text" class="form-control" placeholder="Choice" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-sm btn-danger">Remove Option</button>
+					</span>
+				</div>
+
+				<br />
+
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input type="radio" disabled />
+					</span>
+					<input type="text" class="form-control" placeholder="Choice" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-sm btn-danger">Remove Option</button>
+					</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<button type="button" class="btn btn-sm btn-success">Add Option</button>
+			</div>
+		</div>
+
+		<div class="question-group">
+			<button type="button" class="btn btn-sm btn-danger pull-right">Remove Question</button>
+
+			<div class="form-group">
+				<label>Type</label>
+				<select>
+					<option>Multiple Choice</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<input type="text" placeholder="Question" />
+			</div>
+
+			<div class="form-group">
+				<label>Options</label>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input type="checkbox" disabled />
+					</span>
+					<input type="text" class="form-control" placeholder="Choice" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-sm btn-danger">Remove Option</button>
+					</span>
+				</div>
+
+				<br />
+
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input type="checkbox" disabled />
+					</span>
+					<input type="text" class="form-control" placeholder="Choice" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-sm btn-danger">Remove Option</button>
+					</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<button type="button" class="btn btn-sm btn-success">Add Option</button>
+			</div>
+		</div>
+
+		<div class="question-group">
+			<button type="button" class="btn btn-sm btn-danger pull-right">Remove Question</button>
+
+			<div class="form-group">
+				<label>Type</label>
+				<select>
+					<option>Textarea</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<input type="text" placeholder="Question" class="form-control" />
+				<br />
+				<textarea rows="3" placeholder="Value Placeholder" class="form-control" />
+			</div>
+		</div>
+
+		...
+
+		<br />
+		<br />
+
+		<button type="button" class="btn btn-sm btn-success" {{action 'addField' model}}>
+			Add Question
+		</button>
+	</div>
+</div>

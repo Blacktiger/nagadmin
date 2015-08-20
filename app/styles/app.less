@@ -1,3 +1,11 @@
+@gray-lighter: lighten(#000, 93.5%); // #eee
+
+@font-size-base: 14px;
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:        1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
 #sidebar-shortcuts {
 	display: none;
 }
@@ -126,4 +134,9 @@
 
 .tt-suggestion b {
     width: auto;
+}
+
+.question-group {
+    border-bottom: 1px solid @gray-lighter;
+    margin-bottom: 1em;
 }

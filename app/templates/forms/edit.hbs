@@ -1,17 +1,28 @@
 <div class="edit-form col-sm-8">
 	<form>
-		<div class="form-group">
-			<label for="name">Name</label>
-			{{input id="name" class="form-control" value=model.name required=true}}
+		<div class="panel panel-primary">
+			<div class="panel-heading">Assesment Details</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="name">Name</label>
+					{{input id="name" class="form-control" value=model.name required=true}}
+				</div>
+				<div class="form-group">
+					<label for="type">Type</label>
+					{{view 'select' id="type" class="form-control" content=types value=model.type}}
+				</div>
+			</div>
 		</div>
+
+		{{forms/edit-question-group}}
+
 		<div class="form-group">
-			<label for="type">Type</label>
-			{{view 'select' id="type" class="form-control" content=types value=model.type}}
+			<button type="button" class="btn btn-sm btn-success" {{action 'addGroup' model}}>
+				Add Question Group
+			</button>
 		</div>
-		<div class="form-group">
-			<label for="fields">Field Configuration</label>
-			{{textarea id="fields" class="form-control" value=model.fields rows=10 required=true}}
-		</div>
+
+		<div class="clearfix"></div>
 
 		<div class="pull-right">
 			<button type="button" class="btn btn-sm btn-default" {{action 'cancel' model}}>

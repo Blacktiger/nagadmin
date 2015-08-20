@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import Authenticated from 'nag-admin/routes/authenticated';
 
 export default Authenticated.extend({
@@ -18,6 +17,10 @@ export default Authenticated.extend({
 
 		save: function(form) {
 			form.save();
+			form.get('fieldSets').forEach(fieldSet => {
+				fieldSet.save();
+				fieldSet.get('fields').forEach(field => field.save());
+			});
 			this.transitionTo('forms.index');
 		}
 	}

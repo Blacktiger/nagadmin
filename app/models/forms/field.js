@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	name: DS.attr(),
+	label: DS.attr(),
 	type: DS.attr(),
-	fieldSets: DS.hasMany('forms/fieldset', { async: true })
+	placeholder: DS.attr(),
+	info: DS.attr()
 });
