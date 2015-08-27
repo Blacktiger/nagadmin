@@ -1,12 +1,13 @@
 <div class="question-group">
-	<div class="pull-right">
-		<button type="button" class="btn btn-sm btn-danger">Remove Question</button>
-	</div>
-
 	<div class="form-group">
 		<label>Type</label>
-		<select>
-			<option>Checkbox</option>
+
+		<select onchange={{action (mut selectedType) value="target.value"}}>
+			{{#each types key="@index" as |type|}}
+				<option value={{type.value}} selected={{is-equal type selectedType}}>
+					{{type.label}}
+				</option>
+			{{/each}}
 		</select>
 	</div>
 
