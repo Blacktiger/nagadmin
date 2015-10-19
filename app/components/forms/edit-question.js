@@ -11,7 +11,6 @@ export default Ember.Component.extend({
 		{label: 'Short Answer', value: 'short-answer'},
 		{label: 'Long Answer', value: 'long-answer'},
 		{label: 'Checkbox', value: 'checkbox'},
-		{label: 'Single Choice', value: 'single-choice'},
 		{label: 'Multiple Choice', value: 'multiple-choice'}
 	]
 });
