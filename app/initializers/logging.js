@@ -9,8 +9,9 @@ export default {
 		// Capture Exceptions and log them to Raygun
 		Raygun.init('G5oRCMKDmgp63+QZnCHnZA==').attach();
 
-		// Capture ember errors and log them to Raygun
+		// Capture ember errors and log them to Raygun as well as the console
 		Ember.onerror = function(error) {
+			console && console.error(error);
 			Raygun.send(error);
 		};
 
