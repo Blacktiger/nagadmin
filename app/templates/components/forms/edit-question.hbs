@@ -2,14 +2,14 @@
 	<div class="form-group">
 		<label>Type</label>
 
-		<select onchange={{action (mut selectedType) value="target.value"}}>
+		<select onchange={{action (mut question.type) value="target.value"}}>
 			{{#each types key="@index" as |type|}}
-				<option value={{type.value}} selected={{is-equal type selectedType}}>
+				<option value={{type.value}} selected={{is-equal type question.type}}>
 					{{type.label}}
 				</option>
 			{{/each}}
 		</select>
 	</div>
 
-	{{component questionComponent}}
+	{{component questionComponent question=question}}
 </div>

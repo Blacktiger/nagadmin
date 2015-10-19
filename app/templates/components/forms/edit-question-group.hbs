@@ -1,6 +1,6 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<input type="text" placeholder="Field Group Title" />
+		{{input placeholder="Field Group Title" value=group.label}}
 
 		<div class="pull-right">
 			<button type="button" class="btn btn-sm btn-danger" {{action 'removeGroup' group}}>Remove Question Group</button>
@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="panel-body">
-		{{forms/edit-question}}
+		{{forms/edit-question question=group.question}}
 
 		<button type="button" class="btn btn-sm btn-success" {{action 'addField' model}}>
 			Add Question

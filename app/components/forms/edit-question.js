@@ -1,13 +1,11 @@
 import Ember from "ember";
 
 export default Ember.Component.extend({
-	questionComponent: Ember.computed('selectedType', {
+	questionComponent: Ember.computed('question.type', {
 		get: function() {
-			return `forms/edit-${this.get('selectedType')}-question`;
+			return `forms/edit-${this.get('question.type')}-question`;
 		}
 	}),
-
-	selectedType: 'short-answer',
 
 	types: [
 		{label: 'Short Answer', value: 'short-answer'},

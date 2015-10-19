@@ -17,11 +17,18 @@ export default Authenticated.extend({
 
 		save: function(form) {
 			form.save();
-			form.get('fieldSets').forEach(fieldSet => {
-				fieldSet.save();
-				fieldSet.get('fields').forEach(field => field.save());
+			form.get('groups').forEach(group => {
+				group.save();
+				group.get('questions').forEach(question => question.save());
 			});
 			this.transitionTo('forms.index');
+		},
+
+		addGroup: function(form) {
+			var group = this.store.createRecord('forms/group', {
+				question: this.store.createRecord('forms/question')
+			});
+			form.get('groups').pushObject(group);
 		}
 	}
 });
