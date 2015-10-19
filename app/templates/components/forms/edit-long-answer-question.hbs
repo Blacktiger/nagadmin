@@ -1,5 +1,7 @@
 <div class="form-group">
-	<input type="text" placeholder="Question" class="form-control" />
-	<br />
-	<textarea rows="3" placeholder="Value Placeholder" class="form-control" />
+	{{input class="form-control" placeholder="Question" value=question.label}}
+</div>
+
+<div class="form-group">
+	{{textarea rows="3" class="form-control" placeholder="Value Placeholder" value=question.placeholder}}
 </div>
