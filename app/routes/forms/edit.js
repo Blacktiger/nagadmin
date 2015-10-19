@@ -29,6 +29,11 @@ export default Authenticated.extend({
 				question: this.store.createRecord('forms/question')
 			});
 			form.get('groups').pushObject(group);
+		},
+
+		addOption: function(question) {
+			var option = this.store.createRecord('forms/option');
+			question.get('options').pushObject(option);
 		}
 	}
 });

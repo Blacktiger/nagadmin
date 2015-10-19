@@ -1,8 +1,14 @@
 <div class="form-group">
-	<div class="input-group">
-		<span class="input-group-addon">
-			<input type="checkbox" disabled />
-		</span>
-		<input type="text" class="form-control" placeholder="Checkbox Question" />
-	</div>
+	{{#each question.options as |option|}}
+		<div class="input-group">
+			<span class="input-group-addon">
+				<input type="checkbox" disabled />
+			</span>
+			<input type="text" class="form-control" placeholder="Checkbox Question" />
+		</div>
+		<br>
+	{{/each}}
+	<button type="button" class="btn btn-sm btn-success" {{action 'addOption' question}}>
+		Add Option
+	</button>
 </div>
