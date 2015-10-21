@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		{{input placeholder="Field Group Title" value=model.label}}
+
+		<div class="pull-right">
+			<button type="button" class="btn btn-sm btn-danger" {{action 'clickRemoveGroup' model}}>Remove Question Group</button>
+		</div>
+	</div>
+
+	<div class="panel-body">
+		{{#each model.questions as |question|}}
+			{{forms/edit-question model=question clickRemoveQuestion="clickRemoveQuestion"}}
+		{{/each}}
+
+		<button type="button" class="btn btn-sm btn-success" {{action 'clickAddQuestion' model}}>
+			Add Question
+		</button>
+	</div>
+</div>

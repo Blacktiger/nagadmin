@@ -1,7 +1,7 @@
 import Authenticated from 'nag-admin/routes/authenticated';
 
 export default Authenticated.extend({
-	model: function(params) {
+	model(params) {
 		if (params.id === 'new') {
 			return this.store.createRecord('forms/form');
 		} else {
@@ -10,30 +10,39 @@ export default Authenticated.extend({
 	},
 
 	actions: {
-		cancel: function(form) {
+		cancel(form) {
 			form.rollback();
 			this.transitionTo('forms.index');
 		},
 
-		save: function(form) {
+		save(form) {
 			form.save();
-			form.get('groups').forEach(group => {
-				group.save();
-				group.get('questions').forEach(question => question.save());
-			});
 			this.transitionTo('forms.index');
 		},
 
-		addGroup: function(form) {
-			var group = this.store.createRecord('forms/group', {
-				question: this.store.createRecord('forms/question')
-			});
+		addGroup(form) {
+			var group = this.store.createRecord('forms/group');
+			var question = this.store.createRecord('forms/question');
+
+			group.get('questions').pushObject(question);
 			form.get('groups').pushObject(group);
 		},
 
-		addOption: function(question) {
-			var option = this.store.createRecord('forms/option');
-			question.get('options').pushObject(option);
+		removeGroup(group) {
+			group.deleteRecord();
+		},
+
+		addQuestion(group) {
+			var question = this.store.createRecord('forms/question');
+			group.get('questions').pushObject(question);
+		},
+
+		removeQuestion(question) {
+			question.deleteRecord();
+		},
+
+		removeOption(option) {
+			option.deleteRecord();
 		}
 	}
 });

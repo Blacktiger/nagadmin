@@ -1,9 +1,9 @@
-import Ember from "ember";
+import Ember from 'ember';
 
 export default Ember.Component.extend({
-	questionComponent: Ember.computed('question.type', {
+	questionComponent: Ember.computed('model.type', {
 		get: function() {
-			return `forms/edit-${this.get('question.type')}-question`;
+			return `forms/edit-${this.get('model.type')}-question`;
 		}
 	}),
 
@@ -12,5 +12,11 @@ export default Ember.Component.extend({
 		{label: 'Long Answer', value: 'long-answer'},
 		{label: 'Checkbox', value: 'checkbox'},
 		{label: 'Multiple Choice', value: 'multiple-choice'}
-	]
+	],
+
+	actions: {
+		clickRemoveQuestion(question) {
+			this.sendAction('clickRemoveQuestion', question);
+		}
+	}
 });

@@ -15,11 +15,11 @@
 		</div>
 
 		{{#each model.groups as |group|}}
-			{{forms/edit-question-group group=group}}
+			{{forms/edit-question-group model=group clickAddQuestion="addQuestion" clickRemoveGroup="removeGroup" clickRemoveQuestion="removeQuestion"}}
 		{{/each}}
 
 		<div class="form-group">
-			<button type="button" class="btn btn-sm btn-success" {{action 'addGroup' this}}>
+			<button type="button" class="btn btn-sm btn-success" {{action 'addGroup' model}}>
 				Add Question Group
 			</button>
 		</div>

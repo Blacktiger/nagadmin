@@ -1,0 +1,17 @@
+<div class="question-group">
+	<div class="form-group">
+		<label>Type</label>
+
+		<select onchange={{action (mut model.type) value="target.value"}}>
+			{{#each types key="@index" as |type|}}
+				<option value={{type.value}} selected={{is-equal type model.type}}>
+					{{type.label}}
+				</option>
+			{{/each}}
+		</select>
+
+		<button type="button" class="btn btn-sm btn-danger pull-right" {{action "clickRemoveQuestion" model}}>Remove Question</button>
+	</div>
+
+	{{component questionComponent question=model}}
+</div>
